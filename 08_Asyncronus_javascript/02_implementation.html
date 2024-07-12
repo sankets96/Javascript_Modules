@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asyncormus</title>
+</head>
+<body>
+
+    <h1>Asyncruonus</h1>
+    <div class="result"></div>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+
+        let start = document.querySelector("#start");
+        let end = document.querySelector("#stop");
+        let a;
+
+        start.addEventListener('click',(e)=>{
+            console.log("cliked");
+            a = setTimeout(function(){
+            console.log(" fully runned");
+            document.querySelector(".result").innerHTML="task completed";
+        },2000);
+
+        },false);
+
+        end.addEventListener('click',(e)=>{
+            clearInterval(a);
+            console.log("cleared");
+        },false);
+
+        
+
+
+
+
+    </script>
+    
+</body>
+</html>
