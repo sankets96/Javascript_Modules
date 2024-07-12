@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        background-color: black;
+        color: white;
+        margin: 0;
+        padding: 0;
+    }
+
+
+</style>
+<body>
+
+    <div class="parent">
+        <ul>
+            <li>C</li>
+            <li>C++</li>
+        </ul>
+    </div>
+
+
+
+    <script>
+
+        //add li to ul
+        function addli(mess){
+            let a = document.querySelector('.parent');
+            const li = document.createElement('li');
+            li.innerHTML=mess;
+
+            //apendchild to parent
+            a.appendChild(li);
+
+
+        }
+
+        addli('Java');
+
+
+        //optimum approch
+        function add(mess){
+            let a = document.createElement('li');
+            a.appendChild(document.createTextNode(mess));
+            document.querySelector('.parent').appendChild(a);
+            
+        }
+
+        //becox it not traverse whole document tree
+
+        add('pyhton');
+
+
+        //edit
+        function edit(mess){
+            const a = document.querySelector("li:nth-child(2)");
+            //a.innerHTML=mess;  =>not optimum approch
+            const newli = document.createElement('li');
+            newli.textContent=mess
+            a.replaceWith(newli);
+
+        }
+
+        edit("mojo");
+
+
+
+        //remove
+
+        function Remove(){
+            const a= document.querySelector("li:nth-child(1)");
+            a.remove();
+        }
+        
+        Remove();
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
