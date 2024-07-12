@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>XMLHttprequest</h1>
+    <table border="2pz">
+        <thead>
+            <tr>
+                <th>Sr no</th>
+                <th>Value</th>
+                <th>State</th>
+                <th>Description</th>
+
+            </tr>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>UNSENT</td>
+                    <td>Client</td>
+                    <td>has been created. open() not called yet.</td>
+
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>OPENED</td>
+                    <td>open()</td>
+                    <td>has been called</td>
+
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>HEADERS_RECEIVED</td>
+                    <td>send()</td>
+                    <td>has been called, and headers and status are available</td>
+
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>LOADING</td>
+                    <td>Downloading</td>
+                    <td>responseText holds partial data.</td>
+
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>DONE</td>
+                    <td>--</td>
+                    <td>The operation is complete..</td>
+
+                </tr>
+
+
+            </tbody>
+
+        </thead>
+    </table>
+
+
+    <script>
+        url='https://api.github.com/users/hiteshchoudhary';
+        let  a =new XMLHttpRequest();
+        a.open('POST',url);
+        a.onreadystatechange=function(){
+            console.log(a.readyState);
+        }
+        // console.log('Done');
+        //console.log(a.readyState);
+        if(a.readyState===4){
+            const data = this.Response
+            console.log(typeof data);
+        }
+        a.send();
+
+    </script>
+    
+</body>
+</html>
