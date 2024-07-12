@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="orange" onclick="handler('orange')">Orange</button>
+    <button id="green">Green</button>
+
+    <script>
+
+        let body =document.querySelector('body');
+        // document.getElementById('orange').onclick=function(){
+        //     body.style.backgroundColor='orange'
+        // }
+
+        // document.getElementById('green').onclick=function(){
+        //     body.style.backgroundColor='green'
+        // }
+
+        //in some senario more number of function is there then u can add one functiuon
+
+        function handler(color){
+
+            return function(){
+                body.backgroundColor=`${color}`
+            }
+            
+        }
+
+        document.getElementById.onclick = handler;  //this is u send ref
+        document.getElementById.onclick = handler('orange');    // this is not working
+    </script>
+    
+</body>
+</html>
