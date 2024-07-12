@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button>clicked</button>
+    <script>
+        class user{
+            constructor(message,server){
+                this.message = message;
+                this.server = server
+
+                document.querySelector('button').addEventListener('click',this.clickedfunction.bind(this));
+                //using bind the data of this constructor bind and send to clickedfunction()
+            }
+
+            clickedfunction(){
+                console.log("button clicked ");
+                console.log(this.server);       //undefined 
+            }
+        }
+
+        let a = new user();
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
