@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .conta{
+            background-color: blueviolet;
+            width: 100px;
+            height: 100px;
+            margin: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="fn();">Clike me</button>
+    <div class="conta" onmousemove="ff()" onmouseout="rem()">Container</div>
+    
+
+    <script>
+        function fn(){
+            console.log("Clikled me");
+        }
+
+        function ff(){
+            console.log("over the div");
+            document.querySelector('.conta').innerHTML="over";
+
+        }
+        function rem(){
+            console.log("out the div");
+            document.querySelector('.conta').innerHTML="Container";
+
+        }
+
+
+
+
+    </script>
+</body>
+</html>

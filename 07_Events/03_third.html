@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            width: 80px;
+            height: 32px;
+            margin-top: 100px;
+            background-color: rgb(162, 190, 191);
+            border-radius: 40%;
+        }
+        .child{
+            background-color: red;
+            border: 1px solid black;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            box-shadow: 2px 2px 2px grey;
+            transition: 12s ease-in-out;
+        }
+        /* .child:hover{
+            float: right;
+        } */
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="child"></div>
+    </div>
+    <!-- <button id="btn">Clik me to change</button> -->
+    <script>
+        let a = document.querySelector('.child');
+        let curr = "light";
+        a.addEventListener('click',function(e){
+            if(curr=="light"){
+                curr="dark";
+                document.querySelector('body').style.backgroundColor="black";
+                a.style.float="right";
+            }else{
+                curr="light";
+                document.querySelector('body').style.backgroundColor="white";
+                a.style.float="left";
+            }
+        },false);
+        
+    </script>
+    
+</body>
+</html>
